@@ -20,26 +20,29 @@ class Content extends Component {
 		.then(json => {
 			console.log(json)
             this.setState({capital: json.networks})
-            //console.log("before", this.state.capital)
 		})
 	
     }
 
  render() {
 
-
-    //console.log("after", this.state.capital)
-    const capital = this.state.capital.length > 0 ? <p>{this.state.capital[0].name}</p> : null
-    return (
+    let list = this.state.capital.map(item => {
+        return (
+            
+          <div className="bicycles">
+            <p>{item.location.city}</p>
+          </div>
+        )
+      })
+      return (
         <div>
-    
-        <h1>hi</h1>
-            
-          {capital}
-            
+          {list}
         </div>
-    );
+      )
+
 }
 }
 
 export default Content;
+
+
