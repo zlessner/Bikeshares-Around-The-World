@@ -14,11 +14,22 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      data: []
+      woof: []
     }
   }
 
+  componentDidMount() {
+    fetch('http://api.citybik.es/v2/networks')
+    .then(res => res.json())
+    .then(json => {
+      this.setState({data: json})
+    })
+  }
+
+
+
   render() {
+    console.log(this.state.data)
     return(
       <Router>
         <div>
@@ -29,6 +40,7 @@ class App extends Component {
           </nav>
           <main>
           <Route exact path ="/" render={(routerProps) => <Content {...routerProps}/>} />
+          {/* {this.state.woof.map(d => <Content networks={d.networks} /> )} */}
           </main>
         </div>
       </Router>
