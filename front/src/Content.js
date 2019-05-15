@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import {Route, Link, Switch, Redirect} from 'react-router-dom'
+import Search from './Search'
 
 class Content extends Component {
 
@@ -21,8 +22,6 @@ class Content extends Component {
   }
 
 
-    
-
     componentDidMount () {
 		fetch(`http://api.citybik.es/v2/networks`)
 		.then(res => res.json())
@@ -35,15 +34,15 @@ class Content extends Component {
 
  render() {
 
-    let list = this.state.capital.map(item => {
+    let listOfBikes = this.state.capital.map(outcome => {
         return (
-            
-          <div className="bicycles">
-          <h1>{item.location.city}</h1>
-          <p>{item.name}</p>  
+            <div className="bikeSearch">
+          <h1> <Link to={"/search"}>{outcome.location.city} </Link></h1>
+          <p>{outcome.name}</p>
           </div>
         )
-      })
+        })
+
       return (
         <div>
 
@@ -55,9 +54,11 @@ class Content extends Component {
          />
        <button type="submit">Search</button>
     </div>
+          <div className='container'> {listOfBikes}</div>
 
-          {list}
         </div>
+        
+        
       )
 
 }

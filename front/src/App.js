@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Content from './Content'
+import Search from './Search'
 import {
   BrowserRouter as Router,
   Link,
@@ -20,17 +21,6 @@ class App extends Component {
 
   }
 
-
-  componentDidMount() {
-    fetch('http://api.citybik.es/v2/networks')
-    .then(res => res.json())
-    .then(json => {
-      this.setState({data: json})
-    })
-  }
-
-
-
   render() {
     console.log(this.state.data)
     return(
@@ -39,12 +29,15 @@ class App extends Component {
         <div>
           <nav>
             <Link to="/"><h1>Bike Shares Across the World</h1></Link>
-            <Link to="/search">Search</Link>
+            <Link to="/search">Search </Link> 
             <Link to="/saved-searches">Saved Searches</Link>
             <a href="http://api.citybik.es/v2/" target="_blank" className="documentation">CityBikes API Documentation</a>
           </nav>
           <main>
+            <Switch>
          <Route exact path ="/" render={(routerProps) => <Content {...routerProps}/>} />
+         <Route exact path ="/search" component={Search} />
+         </Switch>
           </main>
         </div>
       </Router>
