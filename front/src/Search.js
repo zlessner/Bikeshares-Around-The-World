@@ -57,7 +57,7 @@ let listOfBikes = this.state.capital.map(outcome => {
 
     </div>
     
-    
+     
   )
 
 }
