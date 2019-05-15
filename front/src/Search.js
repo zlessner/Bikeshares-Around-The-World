@@ -52,7 +52,6 @@ let listOfBikes = this.state.capital.map(outcome => {
      placeholder="Search City"
      onChange={this.searchCity}
      />
-   <button type="submit">Search</button>
 </div>
       <div className='container'> {listOfBikes}</div>
 

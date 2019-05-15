@@ -34,7 +34,10 @@ class Content extends Component {
 
  render() {
 
-    let listOfBikes = this.state.capital.map(outcome => {
+
+    let searchCity = this.state.capital.filter(obj => obj.location.city.includes(this.state.oink))
+
+    let listOfBikes = searchCity.map(outcome => {
         return (
             <div className="bikeSearch">
           <h1> <Link to={"/search/" + outcome.id}>{outcome.location.city} </Link></h1>
@@ -42,7 +45,7 @@ class Content extends Component {
           </div>
         )
         })
-
+  
       return (
         <div>
 
@@ -52,7 +55,6 @@ class Content extends Component {
          placeholder="Search City"
          onChange={this.searchCity}
          />
-       <button type="submit">Search</button>
     </div>
           <div className='container'> {listOfBikes}</div>
 
