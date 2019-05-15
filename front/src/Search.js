@@ -33,7 +33,9 @@ componentDidMount () {
 
 render() {
 
-let listOfBikes = this.state.capital.map(outcome => {
+let searchCity = this.state.capital.filter(obj => obj.name.includes(this.state.oink)) 
+
+let listOfBikes = searchCity.map(outcome => {
     return (
         <div className="bikeSearch">
       <h1> {outcome.name} </h1>
@@ -49,7 +51,7 @@ let listOfBikes = this.state.capital.map(outcome => {
       <div className="searchBox">
   <input 
     type="text"
-     placeholder="Search City"
+     placeholder="Search Bike Share Docking Station"
      onChange={this.searchCity}
      />
 </div>
