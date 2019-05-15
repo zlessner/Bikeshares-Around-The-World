@@ -38,3 +38,7 @@ main {
   background: #DDDDDD;
   height: 100%;
 }
+
+.documentation {
+  font-size: 7px;
+}

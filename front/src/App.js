@@ -16,7 +16,10 @@ class App extends Component {
     this.state = {
       woof: []
     }
+
+
   }
+
 
   componentDidMount() {
     fetch('http://api.citybik.es/v2/networks')
@@ -31,19 +34,25 @@ class App extends Component {
   render() {
     console.log(this.state.data)
     return(
+      <div>
       <Router>
         <div>
           <nav>
             <Link to="/"><h1>Bike Shares Across the World</h1></Link>
             <Link to="/search">Search</Link>
             <Link to="/saved-searches">Saved Searches</Link>
+            <a href="http://api.citybik.es/v2/" target="_blank" className="documentation">CityBikes API Documentation</a>
           </nav>
           <main>
-          <Route exact path ="/" render={(routerProps) => <Content {...routerProps}/>} />
-          {/* {this.state.woof.map(d => <Content networks={d.networks} /> )} */}
+         <Route exact path ="/" render={(routerProps) => <Content {...routerProps}/>} />
           </main>
         </div>
       </Router>
+
+
+
+</div>
+
     )
   
     }

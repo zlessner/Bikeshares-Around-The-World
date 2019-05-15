@@ -8,10 +8,19 @@ class Content extends Component {
 		super()
 
 		this.state = {
-			capital: []
-		}
+            capital: [],
+            oink:''
+        }
 
+        this.searchCity = this.searchCity.bind(this);
+        
     }
+
+  searchCity(evt) {
+    this.setState({oink: evt.target.value})
+  }
+
+
     
 
     componentDidMount () {
@@ -30,12 +39,23 @@ class Content extends Component {
         return (
             
           <div className="bicycles">
-            <p>{item.location.city}</p>
+          <h1>{item.location.city}</h1>
+          <p>{item.name}</p>  
           </div>
         )
       })
       return (
         <div>
+
+          <div className="searchBox">
+      <input 
+        type="text"
+         placeholder="Search City"
+         onChange={this.searchCity}
+         />
+       <button type="submit">Search</button>
+    </div>
+
           {list}
         </div>
       )
