@@ -37,7 +37,7 @@ class Content extends Component {
     let listOfBikes = this.state.capital.map(outcome => {
         return (
             <div className="bikeSearch">
-          <h1> <Link to={"/search"}>{outcome.location.city} </Link></h1>
+          <h1> <Link to={"/search/" + outcome.id}>{outcome.location.city} </Link></h1>
           <p>{outcome.name}</p>
           </div>
         )

@@ -22,13 +22,13 @@ this.setState({oink: evt.target.value})
 
 
 componentDidMount () {
-    fetch(`http://api.citybik.es/v2/networks/norisbike-nurnberg`)
+    console.log(this.props.match.params.id)
+    fetch(`http://api.citybik.es/v2/networks/${this.props.match.params.id}`)
     .then(res => res.json())
     .then(json => {
         console.log(json)
         this.setState({capital: json.network.stations})
     })
-
 }
 
 render() {
@@ -36,8 +36,9 @@ render() {
 let listOfBikes = this.state.capital.map(outcome => {
     return (
         <div className="bikeSearch">
-      <h1> <Link to={"/search"}> {outcome.name} </Link></h1>
-      <p>{outcome.empty_slots}</p>
+      <h1> {outcome.name} </h1>
+      <p>Empty Slots: {outcome.empty_slots}</p>
+      <p>Free Bikes: {outcome.free_bikes}</p>
       </div>
     )
     })
