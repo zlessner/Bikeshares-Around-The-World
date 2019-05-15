@@ -56,7 +56,7 @@ let listOfBikes = this.state.capital.map(outcome => {
       <div className='container'> {listOfBikes}</div>
 
     </div>
-    
+     
      
   )
 
