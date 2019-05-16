@@ -43,7 +43,7 @@ let listOfBikes = searchCity.map(outcome => {
       <p>Free Bikes: {outcome.free_bikes}</p>
       </div>
     )
-    })
+    }) 
 
   return (
     <div>
