@@ -42,14 +42,15 @@ nav a:hover {
 }
 
 main {
-  width: 900px;
   margin: auto;
   background: #DDDDDD;
   height: 100%;
+  width: 100%;
 }
 
 .documentation {
-  font-size: 7px;
+  font-size: 12px;
+  color: grey;
 }
 
 

@@ -12,17 +12,7 @@ import './App.css';
 
 class App extends Component {
 
-  constructor() {
-    super()
-    this.state = {
-      woof: []
-    }
-
-
-  }
-
   render() {
-    console.log(this.state.data)
     return(
       <div>
       <Router>

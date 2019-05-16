@@ -1,3 +1,5 @@
+//create sorting function to alphabetize results 
+
 import React, { Component } from 'react';
 import axios from 'axios'
 import {Route, Link, Switch, Redirect} from 'react-router-dom'
@@ -13,8 +15,9 @@ class Content extends Component {
         }
 
         this.searchCity = this.searchCity.bind(this);
-        
     }
+
+    
 
   searchCity(evt) {
     this.setState({oink: evt.target.value})
@@ -25,7 +28,7 @@ class Content extends Component {
 		fetch(`http://api.citybik.es/v2/networks`)
 		.then(res => res.json())
 		.then(json => {
-			console.log(json)
+      console.log(json)
             this.setState({capital: json.networks})
 		})
 	
@@ -44,7 +47,7 @@ class Content extends Component {
           </div>
         )
         })
-   
+
       return (
         <div>
 
