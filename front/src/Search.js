@@ -33,7 +33,7 @@ componentDidMount () {
 
 render() {
 
-let searchCity = this.state.capital.filter(obj => obj.name.includes(this.state.oink)) 
+let searchCity = this.state.capital.filter(obj => obj.name.toString().toLowerCase().includes(this.state.oink.toString().toLowerCase())) 
 
 let listOfBikes = searchCity.map(outcome => {
     return (

@@ -35,7 +35,7 @@ class Content extends Component {
  render() {
 
 
-    let searchCity = this.state.capital.filter(obj => obj.location.city.includes(this.state.oink))
+    let searchCity = this.state.capital.filter(obj => obj.location.city.toString().toLowerCase().includes(this.state.oink.toString().toLowerCase()))
 
     let listOfBikes = searchCity.map(outcome => {
         return (
