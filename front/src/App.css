@@ -8,6 +8,9 @@ html, body {
   height: 100vh;
 }
 
+input {
+  width: 200px;
+}
 
 nav {
   background: black;

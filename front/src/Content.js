@@ -35,7 +35,8 @@ class Content extends Component {
  render() {
 
 
-    let searchCity = this.state.capital.filter(obj => obj.location.city.toString().toLowerCase().includes(this.state.oink.toString().toLowerCase()))
+    let searchCity = this.state.capital.filter(obj => obj.location.city.toString().toLowerCase().includes(this.state.oink.toString().toLowerCase())
+    || obj.name.toString().toLowerCase().includes(this.state.oink.toString().toLowerCase()))
 
     let listOfBikes = searchCity.map(outcome => {
         return (
@@ -52,7 +53,7 @@ class Content extends Component {
           <div className="searchBox">
       <input 
         type="text"
-         placeholder="Search City"
+         placeholder="Search City or Bikeshare"
          onChange={this.searchCity}
          />
     </div>
