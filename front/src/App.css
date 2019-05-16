@@ -13,8 +13,8 @@ input {
 }
 
 nav {
-  background: black;
-  color: white;
+  background: #394053;
+  color: #FFFDF7;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,7 +37,7 @@ nav a {
 }
 
 nav a:hover {
-  background: #282C34;
+  color: #D1D5DE;
   cursor:pointer;
 }
 
@@ -50,7 +50,25 @@ main {
 
 .documentation {
   font-size: 12px;
-  color: grey;
+  color: white;
+}
+
+a {
+  color: #191c24;
+}
+
+a:hover {
+    color: #535763;
+   }
+
+.bikeSearch {
+  border: 2px solid black;
+  margin: 25px;
+  padding-left: 5px;
+  box-shadow: 3px 3px 3px 1.5px gray;
+  background-color: tan;
+  color: #191c24;
+  text-decoration: none;
 }
 
 
