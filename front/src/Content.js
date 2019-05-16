@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import {Route, Link, Switch, Redirect} from 'react-router-dom'
-import Search from './Search'
 
 class Content extends Component {
 
@@ -34,19 +33,18 @@ class Content extends Component {
 
  render() {
 
-
     let searchCity = this.state.capital.filter(obj => obj.location.city.toString().toLowerCase().includes(this.state.oink.toString().toLowerCase())
     || obj.name.toString().toLowerCase().includes(this.state.oink.toString().toLowerCase()))
 
     let listOfBikes = searchCity.map(outcome => {
         return (
             <div className="bikeSearch">
-          <h1> <Link to={"/search/" + outcome.id}>{outcome.location.city} </Link></h1>
+          <h1> <Link to={"/search/" + outcome.id}> {outcome.location.city} </Link></h1>
           <p>{outcome.name}</p>
           </div>
         )
         })
-  
+   
       return (
         <div>
 

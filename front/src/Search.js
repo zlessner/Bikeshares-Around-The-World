@@ -38,9 +38,9 @@ let searchCity = this.state.capital.filter(obj => obj.name.toString().toLowerCas
 let listOfBikes = searchCity.map(outcome => {
     return (
         <div className="bikeSearch">
-      <h1> {outcome.name} </h1>
-      <p>Empty Slots: {outcome.empty_slots}</p>
-      <p>Free Bikes: {outcome.free_bikes}</p>
+      <h1 className='stations'> {outcome.name} </h1>
+      <p className='slots'>Empty Slots: {outcome.empty_slots}</p>
+      <p className='slots'>Free Bikes: {outcome.free_bikes}</p>
       </div>
     )
     }) 
