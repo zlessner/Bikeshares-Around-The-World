@@ -1,19 +1,13 @@
-//create sorting function to alphabetize results 
-
 import React, { Component } from 'react';
-import axios from 'axios'
-import Favorites from './Favorites'
 import {Route, Link, Switch, Redirect} from 'react-router-dom'
 
-class Content extends Component {
-
+class Favorites extends Component {
 	constructor() {
 		super()
 
 		this.state = {
             capital: [],
-            oink:'',
-            buttonText: 'Add to favorite cities'
+            oink:''
         }
 
         this.searchCity = this.searchCity.bind(this);
@@ -26,10 +20,8 @@ class Content extends Component {
     this.setState({oink: evt.target.value})
   }
 
-  addCity = () => {
-    this.setState({
-      buttonText: 'Added to favorite cities'
-    });
+  addCity(evt) {
+    this.setState({[evt.target.name]: evt.target.value})
   }
 
 
@@ -53,7 +45,7 @@ class Content extends Component {
             <div className="bikeSearch">
           <h1> <Link to={outcome.id}> {outcome.location.city} </Link></h1>
           <p>{outcome.name}</p>
-          {/* <button className='addFaves' onClick={this.addCity}> {this.state.buttonText} </button> */}
+          <button className='addFaves'>Add to favorite cities</button>
           </div>
         )
         })
@@ -68,7 +60,8 @@ class Content extends Component {
          onChange={this.searchCity}
          />
     </div>
-          <div className='container'> {listOfBikes}</div>
+          <div className='container'
+          onClick={this.addCity}> {listOfBikes}</div>
 
         </div>
         
@@ -78,6 +71,4 @@ class Content extends Component {
 }
 }
 
-export default Content;
-
-
+export default Favorites;
