@@ -20,7 +20,7 @@ class App extends Component {
       <Router>
         <div>
           <nav>
-            <Link to="/"><h1>Bikeshares Across the World</h1></Link>
+            <Link to="/"><h1>Bikeshares Around the World</h1></Link>
              {/* <Link to="/favorites">Favorite Cities</Link>  */}
              
             <a href="http://api.citybik.es/v2/" target="_blank" className="documentation">CityBikes API Documentation</a>
